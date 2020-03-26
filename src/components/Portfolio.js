@@ -27,6 +27,7 @@ function Portfolio() {
         {data.portfolio.portfolios.slice(0, 6).map(portfolio => {
           return (
             <div
+              key={portfolio.id}
               className="portfolio__item"
               style={{ backgroundImage: `url(${portfolio.image.url})` }}
             >

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import SingleTestimonial from "./SingleTestimonial"
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"
 
@@ -27,9 +27,16 @@ const Tesimonials = () => {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque blandit, urna eu tincidunt tempus, neque mauris ullamcorper risus, euismod tincidunt augue lacus eget dui. Quisque id tortor magna. Nunc vitae lectus metus. Maecenas ut interdum augue.",
     },
   ]
-  useEffect(() => {
-    console.log(index)
-  })
+
+  // const MyInterval = setInterval(() => {
+  //   let random = Math.floor(Math.random() * 3)
+  //   if (random !== index) {
+  //     setIndex(random)
+  //   } else {
+  //     console.log()
+  //   }
+  // }, 5000)
+
   const nextButtonHandler = () => {
     if (index < 2) {
       setIndex(index + 1)
