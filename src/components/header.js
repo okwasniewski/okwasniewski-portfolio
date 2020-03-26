@@ -1,42 +1,105 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { FaBars } from "react-icons/fa"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
+const Header = () => {
+  const BurgerHandler = () => {
+    let BurgerItem = document.querySelector(".burger")
+
+    BurgerItem.classList.toggle("active")
+  }
+  const Burger = () => {
+    return (
+      <div className="burger">
+        <ul className="burger__nav">
+          <li>
+            <AniLink cover bg="#2191e3" onClick={BurgerHandler} to="/">
+              Home
+            </AniLink>
+          </li>
+          <li>
+            <AniLink
+              cover
+              bg="#2191e3"
+              onClick={BurgerHandler}
+              to="/#aboutme-scroll"
+            >
+              O mnie
+            </AniLink>
+          </li>
+          <li>
+            <AniLink
+              cover
+              bg="#2191e3"
+              onClick={BurgerHandler}
+              to="/#skills-scroll"
+            >
+              Technologie
+            </AniLink>
+          </li>
+          <li>
+            <AniLink
+              cover
+              bg="#2191e3"
+              onClick={BurgerHandler}
+              to="/#portfolio-scroll"
+            >
+              Portfolio
+            </AniLink>
+          </li>
+          <li>
+            <AniLink cover bg="#2191e3" onClick={BurgerHandler} to="/">
+              Kontakt
+            </AniLink>
+          </li>
+        </ul>
+      </div>
+    )
+  }
+
+  return (
+    <header className="header">
+      <h1 className="header__logo">
+        <AniLink cover bg="#2191e3" to="/">
+          okwasniewski
+        </AniLink>
       </h1>
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+      <ul className="header__nav">
+        <li>
+          <AniLink cover bg="#2191e3" to="/">
+            Home
+          </AniLink>
+        </li>
+        <li>
+          <AniLink cover bg="#2191e3" to="/#aboutme-scroll">
+            O mnie
+          </AniLink>
+        </li>
+        <li>
+          <AniLink cover bg="#2191e3" to="/#skills-scroll">
+            Technologie
+          </AniLink>
+        </li>
+        <li>
+          <AniLink cover bg="#2191e3" to="/#portfolio-scroll">
+            Portfolio
+          </AniLink>
+        </li>
+        <li>
+          <AniLink cover bg="#2191e3" to="/">
+            Kontakt
+          </AniLink>
+        </li>
+      </ul>
+      <span className={"header__burger"}>
+        {" "}
+        <FaBars onClick={BurgerHandler} />
+      </span>
+      {Burger()}
+    </header>
+  )
 }
 
 export default Header
