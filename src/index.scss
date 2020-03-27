@@ -16,6 +16,7 @@ a:hover {
   color: #185785 !important;
 }
 .header {
+  z-index: 2;
   margin: 0;
   display: flex;
   width: 100%;
@@ -108,12 +109,13 @@ a:hover {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  height: 60vh;
+  height: 70vh;
   justify-content: center;
+  margin-bottom: 200px;
 
   h1 {
-    background: url("https://www.apple.com//v/ipad-pro/y/images/overview/hero_manifesto_bg__c0zrbe748m82_large.jpg");
-    font-size: 90px;
+    background: url("./images/header.jpg");
+    font-size: 80px;
     background-color: black;
     background-repeat: no-repeat;
     background-size: cover;
@@ -121,7 +123,8 @@ a:hover {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    padding: 20px;
+    padding-top: 100px;
+    padding-left: 100px;
     @media (max-width: 900px) {
       font-size: 60px;
       padding: 20px;
@@ -130,7 +133,7 @@ a:hover {
   h3 {
     margin-top: -30px;
     font-size: 30px;
-    padding: 20px;
+    padding-left: 100px;
     @media (max-width: 900px) {
       font-size: 20px;
       padding: 20px;
@@ -379,15 +382,17 @@ a:hover {
 }
 
 .portfolioTemplate {
+  background-color: #f9f9f9;
   text-align: center;
   &__header {
     margin-bottom: 50px;
+    flex-direction: column;
     display: flex;
     justify-content: center;
     width: 100%;
-    background-color: #2191e3;
-    height: 20vh;
-    color: white;
+    background-color: #ffffff;
+    height: 30vh;
+    color: black;
     align-items: center;
   }
   &__main {
@@ -421,7 +426,8 @@ a:hover {
     font-weight: 600;
   }
   &__buttonContainer {
-    margin: 60px;
+    background-color: #f9f9f9;
+    padding: 60px;
   }
 }
 
@@ -457,7 +463,7 @@ a:hover {
     min-width: 850px;
     height: 300px;
     @media (max-width: 900px) {
-      min-width: 450px;
+      min-width: 300px;
     }
   }
   &__left {
@@ -488,7 +494,7 @@ a:hover {
   opacity: 0;
 
   @media (max-width: 900px) {
-    min-width: 400px;
+    min-width: 250px;
   }
 }
 

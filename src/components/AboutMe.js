@@ -5,10 +5,9 @@ import Img from "gatsby-image"
 function AboutMe() {
   const data = useStaticQuery(graphql`
     query MyQuery {
-      file(relativePath: { eq: "okwansiewski.jpg" }) {
+      file(relativePath: { eq: "okwasniewski.jpg" }) {
         id
         childImageSharp {
-          id
           fluid {
             aspectRatio
             base64
