@@ -13,11 +13,9 @@ const portfolioPostTemplate = data => {
       <div className="portfolioTemplate">
         <div className="portfolioTemplate__header">
           <h1>{pageData.name}</h1>
+          <p>{pageData.description}</p>
         </div>
         <div className="portfolioTemplate__main">
-          <div className="portfolioTemplate__description">
-            <p>{pageData.description}</p>
-          </div>
           <div className="portfolioTemplate__image">
             <img src={pageData.image.url}></img>
           </div>
@@ -29,7 +27,7 @@ const portfolioPostTemplate = data => {
             className="portfolioTemplate__button"
             href={pageData.url}
           >
-            Kliknij aby przejść do strony
+            Zobacz stronę
           </a>
         </div>
       </div>
