@@ -24,6 +24,7 @@ const portfolioPostTemplate = data => {
         </div>
         <div className="portfolioTemplate__buttonContainer">
           <a
+            rel="noopener noreferrer"
             target="_blank"
             className="portfolioTemplate__button"
             href={pageData.url}
