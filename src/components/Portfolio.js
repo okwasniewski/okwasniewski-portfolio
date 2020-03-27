@@ -24,7 +24,7 @@ function Portfolio() {
       <p className="portfolio__smallHeading">Portfolio</p>
       <h1>Moje ostatnie prace</h1>
       <div className="portfolio__section">
-        {data.portfolio.portfolios.slice(0, 6).map(portfolio => {
+        {data.portfolio.portfolios.slice(0, 3).map(portfolio => {
           return (
             <div
               key={portfolio.id}

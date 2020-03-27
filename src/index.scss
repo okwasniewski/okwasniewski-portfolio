@@ -311,10 +311,8 @@ a:hover {
       width: 100%;
     }
   }
-  &__section:nth-child(1) {
-    // animation: pop 1s ease;
-  }
   &__item {
+    // background-color: #2191e3;
     transition: 1s;
     background-size: cover;
     background-position: center;
@@ -323,11 +321,12 @@ a:hover {
     background-blend-mode: overlay;
     width: 300px;
     height: 300px;
-    margin: 30px;
-    border-radius: 10px;
+    margin: 20px;
     -webkit-box-shadow: 0px 7px 25px -11px rgba(0, 0, 0, 0.56);
     -moz-box-shadow: 0px 7px 25px -11px rgba(0, 0, 0, 0.56);
     box-shadow: 0px 7px 25px -11px rgba(0, 0, 0, 0.56);
+    // filter: blur(3px);
+    // -webkit-filter: blur(3px);
     position: relative;
     overflow: hidden;
     transform: scale(1);
@@ -341,7 +340,7 @@ a:hover {
     position: relative;
     // transform: translate(-160%, -40%);
     transform: translate(-50%, -40%);
-    opacity: 0;
+    // opacity: 0;
     left: 50%;
     top: 40%;
     text-align: center;
@@ -367,7 +366,7 @@ a:hover {
     opacity: 1;
   }
   &__item:hover {
-    transform: scale(1.1);
+    transform: translateY(-5%);
   }
   @keyframes pop {
     from {
