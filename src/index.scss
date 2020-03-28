@@ -365,7 +365,7 @@ a:hover {
     color: white;
   }
   &__item:hover > &__title {
-    // transform: translate(-50%, -40%);
+    transform: translate(-50%, -40%);
     opacity: 1;
   }
   &__item:hover {
