@@ -30,17 +30,13 @@ function AboutMe() {
       <div className="aboutme__section">
         <div className="aboutme__description">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu
-            turpis pellentesque, pulvinar arcu et, iaculis magna. Sed cursus
-            gravida dolor id mattis. Praesent quis iaculis mi. Aenean odio enim,
-            porttitor quis sollicitudin in, pellentesque finibus felis. Integer
-            porttitor nibh nulla, vel dapibus arcu pharetra eu. Cras ut porta
-            justo.Praesent quis iaculis mi. Aenean odio enim, porttitor quis
-            sollicitudin in, pellentesque finibus felis. Integer porttitor nibh
-            nulla, vel dapibus arcu pharetra eu. Cras ut porta justo.Praesent
-            quis iaculis mi. Aenean odio enim, porttitor quis sollicitudin in,
-            pellentesque finibus felis. Integer porttitor nibh nulla, vel
-            dapibus arcu pharetra eu. Cras ut porta justo.{" "}
+            Jestem studentem Wydziału Informatyki na Zachodniopomorskim
+            Uniwersytecie Technologicznym. Tworzę strony dla małych firm i
+            przedsiębiorców. Mam doświadczenie w pracy z klientami i potrafię z
+            nimi rozmawiać. Programowanie to coś co sprawia mi dużą frajdę.
+            Lubie rozwiązywać problemy, które przekładają się na tworzenie
+            ciekwych i pomysłowych stron dla firm ze wszystkich branż. W wolnych
+            chilach uprawiam sport i jeżdzę na desce.{" "}
           </p>
         </div>
         <div className="aboutme__image">

@@ -14,9 +14,8 @@ function Main() {
     const person = elements.getElementById("person")
     const screen = elements.getElementById("screen")
     const flower = elements.getElementById("flower")
-    const blob = elements.getElementById("blob")
 
-    gsap.set([person, screen, flower, blob], { autoAlpha: 0 })
+    gsap.set([person, screen, flower], { autoAlpha: 0 })
 
     const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } })
     // gsap.set(person, { transformOrigin: "50% 50%" })
@@ -25,7 +24,6 @@ function Main() {
     tl.fromTo(person, { x: "-=300" }, { duration: 1, x: "+=300", autoAlpha: 1 })
       .fromTo(flower, { y: "-=300" }, { duration: 1, y: "+=300", autoAlpha: 1 })
       .fromTo(screen, { scale: 0 }, { duration: 1, autoAlpha: 1, scale: 1 })
-      .fromTo(blob, { scale: 0 }, { duration: 0.5, autoAlpha: 1, scale: 1 })
   }, [])
 
   return (
@@ -33,7 +31,7 @@ function Main() {
       <div data-aos="fade-right">
         <div className="main__left" delay="50">
           <h1>
-            Pomagam małym <br></br>firmą zwiększać <br></br>sprzedaż
+            Pomagam małym <br></br>firmom zwiększać <br></br>sprzedaż
           </h1>
           <h3> Tworząc przejrzyste strony internetowe </h3>
 
@@ -246,23 +244,6 @@ function Main() {
               d="M671.685 484.984H487.325V486.287H671.685V484.984Z"
               fill="#3F3D56"
             />
-          </g>
-          <g id="blob">
-            <svg
-              width="571"
-              height="577"
-              viewBox="0 0 455 487"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M275.306 0.0814823C343.735 2.32757 397.868 52.2219 436.432 107.182C471.07 156.546 475.213 215.412 468.033 274.745C459.291 346.977 460.245 437.466 392.673 468.776C325.179 500.05 258.061 434.222 190.336 403.421C120.926 371.852 25.3042 363.703 4.24061 292.116C-17.2795 218.977 47.4862 152.629 99.9227 96.1366C147.207 45.1948 204.739 -2.23481 275.306 0.0814823Z"
-                fill="#2191E3"
-                fill-opacity="0.08"
-              />
-            </svg>
           </g>
         </svg>
       </div>
