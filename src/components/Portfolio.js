@@ -6,7 +6,7 @@ function Portfolio() {
   const data = useStaticQuery(graphql`
     query {
       portfolio {
-        portfolios {
+        portfolios(orderBy: createdAt_DESC) {
           id
           name
           image {
