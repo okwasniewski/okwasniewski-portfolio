@@ -12,9 +12,9 @@ body {
   margin: 0;
   overflow-x: hidden;
 }
-a:hover {
-  color: #185785 !important;
-}
+// a:hover {
+//   color: #185785 !important;
+// }
 .header {
   z-index: 2;
   margin: 0;
@@ -103,40 +103,112 @@ a:hover {
   transform: translateX(0);
 }
 
+.button {
+  text-decoration: none;
+  color: white;
+  background-color: #2191e3;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  transition: 0.5s;
+  outline: 0;
+  border: 0;
+  transform: translateX(0);
+  @media (max-width: 768px) {
+    max-width: 80%;
+    text-align: center;
+  }
+}
+.button:hover {
+  -webkit-box-shadow: 0px 0px 54px -15px rgba(33, 145, 227, 0.8);
+  -moz-box-shadow: 0px 0px 54px -15px rgba(33, 145, 227, 0.8);
+  box-shadow: 0px 0px 54px -15px rgba(33, 145, 227, 0.8);
+  transform: translateY(-15%);
+  color: white;
+}
 .main {
   // animation: opacityFade 2s ease;
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  height: 70vh;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-evenly;
   margin-bottom: 200px;
+  @media (max-width: 900px) {
+    width: 100%;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin: 20px;
+  }
+  @media (max-width: 768px) {
+    margin: 20px;
+  }
+  &__left {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: flex-start;
+
+    width: 100%;
+    @media (max-width: 900px) {
+      // align-items: center;
+      width: 100%;
+    }
+  }
+  &__right {
+    padding-top: 100px;
+    width: 500px;
+    max-width: 600px;
+    // width: 49%;
+    @media (max-width: 900px) {
+      width: 100%;
+    }
+    @media (max-width: 400px) {
+      padding-top: 0;
+      width: 300px;
+    }
+  }
+
+  &__button {
+    text-decoration: none;
+    color: white;
+    background-color: #2191e3;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    @media (max-width: 900px) {
+      margin-left: 5px;
+    }
+  }
 
   h1 {
-    background: url("./images/header.jpg");
-    font-size: 80px;
-    background-color: black;
+    // background: url("./images/header.jpg");
+    font-size: 60px;
+    background-color: #2191e3;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right;
     background-clip: text;
     -webkit-background-clip: text;
+    font-weight: 800;
     color: transparent;
-    padding-top: 100px;
-    padding-left: 100px;
     @media (max-width: 900px) {
-      font-size: 60px;
-      padding: 20px;
+      font-size: 50px;
+      padding-left: 5px;
     }
   }
   h3 {
-    margin-top: -30px;
-    font-size: 30px;
-    padding-left: 100px;
+    margin-top: -20px;
+    font-size: 25px;
+    color: #2191e3;
     @media (max-width: 900px) {
       font-size: 20px;
       padding: 20px;
+      padding-left: 5px;
     }
   }
   @keyframes opacityFade {
@@ -160,6 +232,8 @@ a:hover {
   justify-content: center;
   align-items: center;
   &__smallHeading {
+    color: #b6b6b6;
+    text-transform: uppercase;
     font-size: 20px;
     margin-bottom: -20px;
   }
@@ -168,6 +242,9 @@ a:hover {
     font-size: 40px;
     @media (max-width: 900px) {
       font-size: 30px;
+    }
+    @media (max-width: 768px) {
+      font-size: 25px;
     }
   }
   &__section {
@@ -181,9 +258,15 @@ a:hover {
   &__description {
     width: 50%;
     padding: 40px;
+    font-size: 20px;
     @media (max-width: 900px) {
+      text-align: center;
       padding: 10px;
       width: 100%;
+    }
+    @media (max-width: 768px) {
+      font-size: 16px;
+      text-align: center;
     }
   }
   &__image {
@@ -193,10 +276,19 @@ a:hover {
       padding: 10px;
       width: 100%;
     }
+    @media (max-width: 768px) {
+      width: 50%;
+      margin: 0 auto;
+    }
+    @media (max-width: 400px) {
+      width: 80%;
+      margin: 0 auto;
+    }
   }
 
   &__image img {
     border-radius: 40px;
+    width: 100%;
   }
   @keyframes animationLeft {
     from {
@@ -224,6 +316,7 @@ a:hover {
   }
   &__smallHeading {
     color: white;
+    text-transform: uppercase;
     font-size: 20px;
     margin-bottom: -20px;
   }
@@ -245,7 +338,6 @@ a:hover {
   }
 
   &__circle {
-    // animation: 4s ease popUP;
     text-align: center;
     font-size: 50px;
     padding: 20px;
@@ -253,8 +345,6 @@ a:hover {
     margin: 30px;
     transform: scale(1);
     transition: 0.5s;
-    // border: 2px solid black;
-    // border-radius: 100%;
   }
   &__circle:hover {
     transform: scale(1.3);
@@ -262,25 +352,6 @@ a:hover {
   &__element h3 {
     text-align: center;
     color: white;
-  }
-  @keyframes animationRight {
-    from {
-      transform: translate(150%);
-    }
-    to {
-      transform: translate(0);
-    }
-  }
-  @keyframes popUP {
-    0% {
-      transform: scale(0);
-    }
-    50% {
-      transform: scale(1.3);
-    }
-    100% {
-      transform: scale(1);
-    }
   }
 }
 
@@ -291,8 +362,23 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 50px;
+  @media (max-width: 400px) {
+    margin-top: 0;
+  }
+  &__header {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #ffffff;
+    height: 30vh;
+    color: black;
+    align-items: center;
+  }
   &__smallHeading {
+    color: #b6b6b6;
+    text-transform: uppercase;
     font-size: 20px;
     margin-bottom: -20px;
   }
@@ -303,6 +389,9 @@ a:hover {
       font-size: 30px;
     }
   }
+  &__all {
+    margin-bottom: 200px;
+  }
   &__section {
     display: flex;
     justify-content: center;
@@ -310,45 +399,49 @@ a:hover {
     flex-wrap: wrap;
     // animation: pop 2s ease;
     @media (max-width: 1000px) {
-      flex-direction: column;
+      // flex-direction: column;
       width: 100%;
     }
   }
   &__item {
-    // background-color: #2191e3;
     transition: 1s;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
     background-blend-mode: overlay;
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     margin: 20px;
-    -webkit-box-shadow: 0px 7px 25px -11px rgba(0, 0, 0, 0.56);
-    -moz-box-shadow: 0px 7px 25px -11px rgba(0, 0, 0, 0.56);
-    box-shadow: 0px 7px 25px -11px rgba(0, 0, 0, 0.56);
-    // filter: blur(3px);
-    // -webkit-filter: blur(3px);
+    -webkit-box-shadow: 4px 9px 38px -25px rgba(103, 111, 116, 1);
+    -moz-box-shadow: 4px 9px 38px -25px rgba(103, 111, 116, 1);
+    box-shadow: 4px 9px 38px -25px rgba(103, 111, 116, 1);
+    border-radius: 5px;
     position: relative;
     overflow: hidden;
     transform: scale(1);
     @media (max-width: 1000px) {
       width: 90%;
-      height: 500px;
+      height: 600px;
+    }
+    @media (max-width: 768px) {
+      height: 600px;
+    }
+    @media (max-width: 400px) {
+      height: 350px;
     }
   }
   &__title {
     transition: 0.5s;
     position: relative;
-    // transform: translate(-160%, -40%);
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, -140%);
+    // transform: translate(-50%, -40%);
     // opacity: 0;
     left: 50%;
     top: 40%;
     text-align: center;
     border-radius: 10px;
-    padding-top: 20%;
+    padding-top: 25%;
     width: 100%;
     height: 100%;
     font-size: 30px;
@@ -356,11 +449,8 @@ a:hover {
     background-color: rgba(0, 0, 0, 0.64);
   }
   &__redirect {
-    border-radius: 15px;
     font-size: 18px;
-    font-weight: 500;
-    background-color: #2191e3;
-    padding: 10px 20px;
+    font-weight: 600;
     text-decoration: none;
     color: white;
   }
@@ -370,13 +460,11 @@ a:hover {
   }
   &__item:hover {
     transform: translateY(-5%);
-  }
-  @keyframes pop {
-    from {
-      transform: scale(0);
-    }
-    to {
-      transform: scale(1);
+    -webkit-box-shadow: 0px 0px 47px -6px rgba(103, 111, 116, 1);
+    -moz-box-shadow: 0px 0px 47px -6px rgba(103, 111, 116, 1);
+    box-shadow: 0px 0px 47px -6px rgba(103, 111, 116, 1);
+    @media (max-width: 900px) {
+      transform: translateY(0%);
     }
   }
 }
@@ -442,6 +530,8 @@ a:hover {
   position: relative;
   margin-bottom: 200px;
   &__smallHeading {
+    color: #b6b6b6;
+    text-transform: uppercase;
     font-size: 20px;
     margin-bottom: -20px;
   }
@@ -463,6 +553,12 @@ a:hover {
     min-width: 850px;
     height: 300px;
     @media (max-width: 900px) {
+      min-width: 800px;
+    }
+    @media (max-width: 768px) {
+      min-width: 500px;
+    }
+    @media (max-width: 400px) {
       min-width: 300px;
     }
   }
@@ -483,17 +579,26 @@ a:hover {
 }
 
 .single-testimonial {
+  color: white;
   transition: 1s;
   min-width: 800px;
   flex: 1;
   width: 100%;
-  border: 2px solid #2191e3;
-  padding: 20px;
+  background: #185785;
+  box-shadow: 3px 4px 25px rgba(24, 87, 133, 0.25);
+  border-radius: 10px;
+  padding: 25px;
   margin: 30px;
   border-radius: 15px;
   opacity: 0;
 
   @media (max-width: 900px) {
+    min-width: 750px;
+  }
+  @media (max-width: 768px) {
+    min-width: 450px;
+  }
+  @media (max-width: 400px) {
     min-width: 250px;
   }
 }
@@ -539,6 +644,9 @@ a:hover {
   }
   &__navSection {
     width: 20%;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
   &__navSection ul {
     margin-left: -45px;
@@ -580,3 +688,70 @@ a:hover {
     margin: 7px;
   }
 }
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__header {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 20vh;
+  }
+  &__form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    width: 800px;
+    margin: 50px;
+  }
+  &__form input {
+    border: 0px;
+    border-bottom: 2px solid #eeeeee;
+    padding: 10px;
+    margin: 30px;
+    transition: 1s;
+    outline: 0;
+    position: relative;
+  }
+  &__form label {
+    transition: 1s;
+    transform: translate(0);
+  }
+
+  &__form textarea {
+    border: 0px;
+    border-bottom: 2px solid #eeeeee;
+    padding: 10px;
+    margin: 30px;
+    transition: 1s;
+    outline: 0;
+  }
+  &__form input:focus {
+    outline: 0;
+    border-bottom: 2px solid #2191e3;
+  }
+}
+
+// @media (prefers-color-scheme: dark) {
+//   html {
+//     background-color: #121212;
+//   }
+//   h1 {
+//     color: white;
+//   }
+//   p {
+//     color: white;
+//   }
+//   .header {
+//     background-color: #373737;
+//     &__nav a {
+//       color: white;
+//     }
+//   }
+// }

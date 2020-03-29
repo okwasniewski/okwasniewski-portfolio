@@ -23,9 +23,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <div data-aos="fade-right">
-        <Main />
-      </div>
+      <Main />
       <div data-aos="fade-left">
         <AboutMe />
       </div>

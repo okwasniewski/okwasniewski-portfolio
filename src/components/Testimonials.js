@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import SingleTestimonial from "./SingleTestimonial"
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"
+// import SliderSimple from "./slider"
 
 const Tesimonials = () => {
   const [index, setIndex] = useState(0)

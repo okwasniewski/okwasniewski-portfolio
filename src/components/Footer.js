@@ -60,7 +60,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer__copyright">
-        <p>Copyright - Oskar Kwaśniewski</p>
+        <p>© Copyright 2020 - Oskar Kwaśniewski</p>
       </div>
     </div>
   )

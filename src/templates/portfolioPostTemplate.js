@@ -24,7 +24,7 @@ const portfolioPostTemplate = data => {
           <a
             rel="noopener noreferrer"
             target="_blank"
-            className="portfolioTemplate__button"
+            className="button"
             href={pageData.url}
           >
             Zobacz stronę

@@ -15,6 +15,9 @@ function Portfolio() {
           description
           url
           slug
+          thumbnail {
+            url
+          }
         }
       }
     }
@@ -29,12 +32,14 @@ function Portfolio() {
             <div
               key={portfolio.id}
               className="portfolio__item"
-              style={{ backgroundImage: `url(${portfolio.image.url})` }}
+              style={{
+                backgroundImage: `url(${portfolio.thumbnail.url})`,
+              }}
             >
               <div className="portfolio__title">
                 <h3 className="portfolio__name">{portfolio.name}</h3>{" "}
                 <AniLink
-                  className="portfolio__redirect"
+                  className="portfolio__redirect button"
                   cover
                   bg="#2191e3"
                   to={`/${portfolio.slug}`}
@@ -46,6 +51,10 @@ function Portfolio() {
           )
         })}
       </div>
+      <AniLink className="button" cover bg="#2191e3" to={`/portfolio`}>
+        {" "}
+        Zobacz więcej
+      </AniLink>
     </div>
   )
 }
