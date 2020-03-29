@@ -472,13 +472,14 @@ body {
   background-color: #f9f9f9;
   text-align: center;
   &__header {
+    margin-top: 50px;
     margin-bottom: 50px;
     flex-direction: column;
     display: flex;
     justify-content: center;
     width: 100%;
     background-color: #ffffff;
-    height: 30vh;
+    height: 20vh;
     color: black;
     align-items: center;
   }

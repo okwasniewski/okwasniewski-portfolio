@@ -1,6 +1,6 @@
 import React from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import { FaFacebook, FaGithub, FaFacebookF } from "react-icons/fa"
+import { FaFacebook, FaGithub, FaFacebookF, FaEnvelope } from "react-icons/fa"
 
 const Footer = () => {
   return (
@@ -47,13 +47,18 @@ const Footer = () => {
           <h3>Social media</h3>
           <ul>
             <li>
-              <a href="#">
+              <a href="http://github.com/okwasniewski/">
                 <FaGithub /> Github
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="https://www.facebook.com/okwasniewski/">
                 <FaFacebook /> Facebook
+              </a>
+            </li>
+            <li>
+              <a href="mailto:oskarkwasniewski@icloud.com">
+                <FaEnvelope /> Napisz maila
               </a>
             </li>
           </ul>
