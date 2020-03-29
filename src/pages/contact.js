@@ -1,6 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
 import { Formik } from "formik"
+import axios from "axios"
+import swal from "sweetalert"
 
 function Contact() {
   return (
@@ -15,22 +17,25 @@ function Contact() {
         </div>
         <Formik
           initialValues={{ name: "", email: "", subject: "", message: "" }}
-          validate={values => {
-            const errors = {}
-            if (!values.email) {
-              errors.email = "Required"
-            } else if (
-              !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-            ) {
-              errors.email = "Invalid email address"
-            }
-            return errors
-          }}
-          onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2))
-              setSubmitting(false)
-            }, 400)
+          onSubmit={(values, { setSubmitting, resetForm }) => {
+            axios
+              .post(
+                "https://us-central1-okwasniewski-62998.cloudfunctions.net/SendMessage",
+                values
+              )
+              .then(res => {
+                setSubmitting(false)
+                resetForm({})
+                swal(
+                  "Udało się!",
+                  "Twoja wiadomość została wysłana!",
+                  "success"
+                )
+              })
+              .catch(err => {
+                console.log(err)
+                setSubmitting(false)
+              })
           }}
         >
           {({
@@ -53,8 +58,6 @@ function Contact() {
                 onBlur={handleBlur}
                 value={values.email}
               />
-
-              {/* {errors.email && touched.email && errors.email} */}
 
               <input
                 autoComplete="off"

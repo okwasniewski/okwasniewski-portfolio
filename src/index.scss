@@ -116,7 +116,6 @@ body {
   border: 0;
   transform: translateX(0);
   @media (max-width: 768px) {
-    max-width: 80%;
     text-align: center;
   }
 }
@@ -701,14 +700,34 @@ body {
     flex-direction: column;
     text-align: center;
     height: 20vh;
+    @media (max-width: 900px) {
+      margin-top: 50px;
+    }
   }
   &__form {
     position: relative;
     display: flex;
     flex-direction: column;
-    max-width: 800px;
     width: 800px;
     margin: 50px;
+
+    @media (max-width: 900px) {
+      width: 650px;
+    }
+    @media (max-width: 768px) {
+      width: 450px;
+    }
+    @media (max-width: 400px) {
+      width: 300px;
+    }
+  }
+  &__form .button {
+    @media (max-width: 900px) {
+      margin: 50px;
+    }
+    @media (max-width: 768px) {
+      margin: 50px;
+    }
   }
   &__form input {
     border: 0px;

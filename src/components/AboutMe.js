@@ -8,12 +8,8 @@ function AboutMe() {
       file(relativePath: { eq: "okwasniewski.jpg" }) {
         id
         childImageSharp {
-          fluid {
-            aspectRatio
-            base64
-            src
-            srcSet
-            sizes
+          fluid(maxWidth: 800, maxHeight: 800, quality: 90) {
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
