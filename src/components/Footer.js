@@ -37,7 +37,7 @@ const Footer = () => {
               </AniLink>
             </li>
             <li>
-              <AniLink cover bg="#2191e3" to="/">
+              <AniLink cover bg="#2191e3" to="/kontakt">
                 Kontakt
               </AniLink>
             </li>

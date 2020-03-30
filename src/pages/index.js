@@ -1,8 +1,5 @@
 import React, { useEffect } from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import Main from "../components/main"
 import AboutMe from "../components/AboutMe"
@@ -22,7 +19,10 @@ const IndexPage = () => {
   }
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO
+        title="Portfolio / Front-end Developer "
+        description="Cześć! Nazywam się Oskar Kwaśniewski i zajmuje się tworzeniem, wprowadzaniem zmian oraz aktualizacją stron dla małych firm i przedsiębiorców. Mam doświadczenie w pracy z klientami i potrafię z nimi rozmawiać. "
+      />
       <Main />
       <div data-aos="fade-left">
         <AboutMe />

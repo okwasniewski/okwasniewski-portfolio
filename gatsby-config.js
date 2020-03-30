@@ -1,8 +1,7 @@
 module.exports = {
-  // pathPrefix: "/okwasniewski-portfolio",
   siteMetadata: {
     title: `Oskar Kwaśniewski`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Tworzę strony dla małych firm i przedsiębiorców`,
     author: `@okwasniewski`,
   },
   plugins: [
@@ -35,12 +34,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `okwasniewski-portfolio`,
+        short_name: `okwasniewski`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },

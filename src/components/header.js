@@ -50,7 +50,7 @@ const Header = () => {
             </AniLink>
           </li>
           <li>
-            <AniLink cover bg="#2191e3" onClick={BurgerHandler} to="/contact">
+            <AniLink cover bg="#2191e3" onClick={BurgerHandler} to="/kontakt">
               Kontakt
             </AniLink>
           </li>
@@ -88,7 +88,7 @@ const Header = () => {
           </AniLink>
         </li>
         <li>
-          <AniLink cover bg="#2191e3" to="/contact">
+          <AniLink cover bg="#2191e3" to="/kontakt">
             Kontakt
           </AniLink>
         </li>

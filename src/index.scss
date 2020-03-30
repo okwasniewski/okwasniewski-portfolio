@@ -694,6 +694,28 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  &__section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 1000px) {
+      flex-direction: column;
+    }
+  }
+  &__left {
+    order: 2;
+    max-width: 500px;
+    text-align: center;
+  }
+  &__left li {
+    list-style-type: none;
+    margin-left: -40px;
+  }
+  &__left a {
+    text-decoration: none;
+    color: black;
+  }
+
   &__header {
     display: flex;
     justify-content: center;

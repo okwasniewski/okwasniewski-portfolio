@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const portfolioPostTemplate = data => {
   const pageData = data.pageContext.data
@@ -10,6 +11,10 @@ const portfolioPostTemplate = data => {
   }
   return (
     <Layout>
+      <SEO
+        title={`Portfolio - ${pageData.name}`}
+        description={pageData.description}
+      />
       <div className="portfolioTemplate">
         <div className="portfolioTemplate__header">
           <h1>{pageData.name}</h1>

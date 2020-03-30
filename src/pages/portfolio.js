@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Layout from "../components/layout"
-
+import SEO from "../components/seo"
 function Portfolio() {
   const data = useStaticQuery(graphql`
     query {
@@ -25,6 +25,12 @@ function Portfolio() {
   `)
   return (
     <Layout>
+      <SEO
+        title="Portfolio"
+        description="Nazywam się Oskar Kwaśniewski
+        i zajmuje się tworzeniem stron od 2 lat.
+        Jestem studentem Wydziału Informatyki na Zachodniopomorskim Uniwersytecie Technologicznym. "
+      />
       <div className="portfolio">
         <div className="portfolio__header">
           <p>Portfolio</p>
