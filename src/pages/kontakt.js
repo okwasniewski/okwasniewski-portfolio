@@ -1,12 +1,33 @@
 import React from "react"
 import Layout from "../components/layout"
-import { Formik } from "formik"
 import axios from "axios"
 import swal from "sweetalert"
 import SEO from "../components/seo"
+import { useForm } from "react-hook-form"
 import { FaFacebook, FaGithub, FaEnvelope } from "react-icons/fa"
 
 function Kontakt() {
+  const { register, handleSubmit, errors, setValue } = useForm()
+  const onSubmit = data => {
+    axios
+      .post(
+        "https://us-central1-okwasniewski-62998.cloudfunctions.net/SendMessage",
+        data
+      )
+      .then(res => {
+        swal("Udało się!", "Twoja wiadomość została wysłana!", "success")
+        setValue([
+          { email: "" },
+          { name: "" },
+          { subject: "" },
+          { message: "" },
+        ])
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
   return (
     <Layout>
       <SEO
@@ -43,90 +64,59 @@ function Kontakt() {
             </ul>
           </div>
           <div className="contact__right">
-            <Formik
-              initialValues={{ name: "", email: "", subject: "", message: "" }}
-              onSubmit={(values, { setSubmitting, resetForm }) => {
-                axios
-                  .post(
-                    "https://us-central1-okwasniewski-62998.cloudfunctions.net/SendMessage",
-                    values
-                  )
-                  .then(res => {
-                    setSubmitting(false)
-                    resetForm({})
-                    swal(
-                      "Udało się!",
-                      "Twoja wiadomość została wysłana!",
-                      "success"
-                    )
-                  })
-                  .catch(err => {
-                    console.log(err)
-                    setSubmitting(false)
-                  })
-              }}
-            >
-              {({
-                values,
-                errors,
-                touched,
-                handleChange,
-                handleBlur,
-                handleSubmit,
-                isSubmitting,
-                /* and other goodies */
-              }) => (
-                <form className="contact__form" onSubmit={handleSubmit}>
-                  <input
-                    autoComplete="off"
-                    placeholder="Adres email"
-                    type="email"
-                    id="email"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.email}
-                  />
+            <form className="contact__form" onSubmit={handleSubmit(onSubmit)}>
+              <input
+                autoComplete="off"
+                placeholder="Adres email"
+                type="email"
+                name="email"
+                ref={register}
+              />
 
-                  <input
-                    autoComplete="off"
-                    placeholder="Imię i nazwisko"
-                    type="text"
-                    id="name"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.name}
-                  />
-
-                  <input
-                    autoComplete="off"
-                    placeholder="Temat"
-                    type="text"
-                    id="subject"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.subject}
-                  />
-
-                  <textarea
-                    autoComplete="off"
-                    placeholder="Wiadomość"
-                    type="message"
-                    id="message"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.message}
-                  />
-
-                  <button
-                    className="button"
-                    type="submit"
-                    disabled={isSubmitting}
-                  >
-                    Wyślij
-                  </button>
-                </form>
+              <input
+                autoComplete="off"
+                placeholder="Imię i nazwisko"
+                type="text"
+                name="name"
+                ref={register({ required: true, minLength: 5 })}
+              />
+              {errors.name && errors.name.type === "required" && (
+                <p>To pole jest wymagane</p>
               )}
-            </Formik>
+              {errors.name && errors.name.type === "minLength" && (
+                <p>To pole musi zawierać 5 znaków</p>
+              )}
+              <input
+                autoComplete="off"
+                placeholder="Temat"
+                type="text"
+                name="subject"
+                ref={register({ required: true, minLength: 5 })}
+              />
+              {errors.subject && errors.subject.type === "required" && (
+                <p>To pole jest wymagane</p>
+              )}
+              {errors.subject && errors.subject.type === "minLength" && (
+                <p>To pole musi zawierać 5 znaków</p>
+              )}
+              <textarea
+                autoComplete="off"
+                placeholder="Wiadomość"
+                type="message"
+                name="message"
+                ref={register({ required: true, minLength: 15 })}
+              />
+              {errors.message && errors.message.type === "required" && (
+                <p>To pole jest wymagane</p>
+              )}
+              {errors.message && errors.message.type === "minLength" && (
+                <p>To pole musi zawierać 15 znaków</p>
+              )}
+
+              <button className="button" type="submit">
+                Wyślij
+              </button>
+            </form>
           </div>
         </div>
       </div>
