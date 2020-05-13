@@ -1,39 +1,20 @@
-import React, { useRef, useEffect } from "react"
+import React, { useRef, useState } from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import gsap from "gsap"
 import { CSSPlugin } from "gsap/CSSPlugin"
-// import Lottie from "react-lottie"
-// import animationData from "../animations/rocket.json"
+import Lottie from "react-lottie"
+import animationData from "../animations/rocket.json"
 
 function Main() {
-  const wrapper = useRef(null)
-
-  useEffect(() => {
-    const [elements] = wrapper.current.children
-    gsap.registerPlugin(CSSPlugin)
-    const person = elements.getElementById("person")
-    const screen = elements.getElementById("screen")
-    const flower = elements.getElementById("flower")
-
-    gsap.set([person, screen, flower], { autoAlpha: 0 })
-
-    const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } })
-    // gsap.set(person, { transformOrigin: "50% 50%" })
-    // gsap.set(screen, { transformOrigin: "50% 50%" })
-
-    tl.fromTo(person, { x: "-=300" }, { duration: 1, x: "+=300", autoAlpha: 1 })
-      .fromTo(flower, { y: "-=300" }, { duration: 1, y: "+=300", autoAlpha: 1 })
-      .fromTo(screen, { scale: 0 }, { duration: 1, autoAlpha: 1, scale: 1 })
-  }, [])
-
-  // const defaultOptions = {
-  //   loop: true,
-  //   autoplay: true,
-  //   animationData: animationData,
-  //   rendererSettings: {
-  //     preserveAspectRatio: "xMidYMid slice",
-  //   },
-  // }
+  const [isStopped, setIsStopeed] = useState(true)
+  const defaultOptions = {
+    loop: true,
+    autoplay: false,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  }
   return (
     <div className="main">
       <div data-aos="fade-right">
@@ -53,9 +34,13 @@ function Main() {
           </AniLink>
         </div>
       </div>
-      <div ref={wrapper} className="main__right">
-        {/* <Lottie options={defaultOptions} height={400} width={400} /> */}
-        <svg
+      <div
+        onMouseEnter={() => setIsStopeed(false)}
+        onMouseLeave={() => setIsStopeed(true)}
+        className="main__right"
+      >
+        <Lottie options={defaultOptions} isPaused={isStopped} />
+        {/* <svg
           style={{ display: "block" }}
           width="100%"
           height="500px"
@@ -252,7 +237,7 @@ function Main() {
               fill="#3F3D56"
             />
           </g>
-        </svg>
+        </svg> */}
       </div>
     </div>
   )
