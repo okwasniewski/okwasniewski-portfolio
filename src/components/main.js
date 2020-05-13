@@ -1,7 +1,5 @@
-import React, { useRef, useState } from "react"
+import React, { useState } from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import gsap from "gsap"
-// import { CSSPlugin } from "gsap/CSSPlugin"
 import Lottie from "react-lottie"
 import animationData from "../animations/group-working.json"
 
