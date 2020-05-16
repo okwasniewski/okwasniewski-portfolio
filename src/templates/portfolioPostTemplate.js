@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -22,7 +21,7 @@ const portfolioPostTemplate = data => {
         </div>
         <div className="portfolioTemplate__main">
           <div className="portfolioTemplate__image">
-            <img src={pageData.image.url}></img>
+            <img alt={pageData.name} src={pageData.image.url}></img>
           </div>
         </div>
         <div className="portfolioTemplate__buttonContainer">

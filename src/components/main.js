@@ -1,18 +1,8 @@
-import React, { useState } from "react"
+import React from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import Lottie from "react-lottie"
-import animationData from "../animations/group-working.json"
+import AnimatedGif from "../animations/group.gif"
 
 function Main() {
-  const [isStopped] = useState(false)
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  }
   return (
     <div className="main">
       <div data-aos="fade-right">
@@ -33,7 +23,7 @@ function Main() {
         </div>
       </div>
       <div className="main__right">
-        <Lottie options={defaultOptions} isPaused={isStopped} />
+        <img src={AnimatedGif} alt="Help people grow!" />
       </div>
     </div>
   )

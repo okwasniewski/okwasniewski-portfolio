@@ -1,6 +1,6 @@
 import React from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import { FaFacebook, FaGithub, FaFacebookF, FaEnvelope } from "react-icons/fa"
+import { FaFacebook, FaGithub, FaEnvelope } from "react-icons/fa"
 
 const Footer = () => {
   return (
