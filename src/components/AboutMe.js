@@ -31,8 +31,8 @@ function AboutMe() {
             przedsiębiorców. Mam doświadczenie w pracy z klientami i potrafię z
             nimi rozmawiać. Programowanie to coś co sprawia mi dużą frajdę.
             Lubie rozwiązywać problemy, które przekładają się na tworzenie
-            ciekwych i pomysłowych stron dla firm ze wszystkich branż. W wolnych
-            chilach uprawiam sport i jeżdzę na desce.{" "}
+            ciekawych i pomysłowych stron dla firm ze wszystkich branż. W
+            wolnych chwilach uprawiam sport i jeżdzę na desce.
           </p>
         </div>
         <div className="aboutme__image">

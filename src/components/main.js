@@ -1,8 +1,16 @@
 import React from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import AnimatedGif from "../animations/group.gif"
-
+import Lottie from "react-lottie"
+import AnimationData from "../animations/group-working.json"
 function Main() {
+  const defaultOptions = {
+    loop: false,
+    autoplay: true,
+    animationData: AnimationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  }
   return (
     <div className="main">
       <div data-aos="fade-right">
@@ -23,7 +31,7 @@ function Main() {
         </div>
       </div>
       <div className="main__right">
-        <img src={AnimatedGif} alt="Help people grow!" />
+        <Lottie options={defaultOptions} width={500} height={500} />
       </div>
     </div>
   )

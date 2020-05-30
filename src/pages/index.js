@@ -5,7 +5,6 @@ import Main from "../components/main"
 import AboutMe from "../components/AboutMe"
 import Skills from "../components/Skills"
 import Portfolio from "../components/Portfolio"
-import Testimonial from "../components/Testimonials"
 import AOS from "aos"
 import "aos/dist/aos.css"
 
@@ -32,9 +31,6 @@ const IndexPage = () => {
       </div>
       <div data-aos="fade-up" data-aos-delay="50">
         <Portfolio />
-      </div>
-      <div data-aos="fade-left">
-        <Testimonial />
       </div>
     </Layout>
   )
